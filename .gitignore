@@ -4,3 +4,6 @@
 *.toc
 *.log
 *.bib
+*.lock
+*.bundle
+*.vendor
