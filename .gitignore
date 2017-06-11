@@ -1,6 +1,5 @@
 *.aux
 *.lof
-*.pdf
 *.toc
 *.log
 *.bib
@@ -12,3 +11,7 @@
 *.dvi
 *.fdb_latexmk
 *.fls
+essay.pdf
+seminar_beschreibung.pdf
+wiss_Arbeitstechniken_fuer_Seminare_V2.pdf
+
