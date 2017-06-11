@@ -7,3 +7,8 @@
 *.lock
 *.bundle
 *.vendor
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
