@@ -5,7 +5,7 @@ before_install:
   texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng biber latexmk
 script:
 - mkdir build
-- latexmk -pdf -output-directory build essay.tex
+- latexmk -pdf -output-directory=build essay.tex
 deploy:
   provider: releases
   api_key:
