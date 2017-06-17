@@ -15,7 +15,8 @@ Harald Richter}
 \begin{document}
 \maketitle
 \tableofcontents
-\chapter{Einleitung}
+\chapter*{Einleitung}
+\addcontentsline{toc}{chapter}{Einleitung}
 Im Zeitalter immer fortschreitender Digitalisierung wächst die Nachfrage
 nach billigem Speicherplatz und Rechenpower zunehmends. Der Trend geht
 deshalb immer mehr zum Cloud Computing.  ``Zwei von drei Unternehmen (65
@@ -54,18 +55,38 @@ ratsamer die Last und damit auch das Ausfall-Risiko auf mehrere Servern
 zu verteilen. Im Idealfall sind diese Server sogar noch physisch von
 einander getrennt um Ausfälle durch Naturkatastrophen oder politischen
 Auseinandersetzungen zu vermeiden.  Alle diese Ansätze vereint Amazon
-Web Services (AWS). Im weiteren Verlauf dieser Arbeit werden die
-Technologien Amazon EC2-virtual-server und Amazon EC2-container weiter
-beleuchtet und vorgestellt.
+Web Services (AWS). Im weiteren Verlauf dieser Arbeit wird der Dienst
+Amazon EC2 genauer vorgestellt und dessen Kernkonzepte Virtual-Server
+und Container genauer beleuchtet. Außerdem werden etwaige Vorteile und
+Nachteile sowie Unterschiede zwischen beiden Konzepten hervorgehoben.
 \begin{figure}
     \centering
     \includegraphics[width=1.0\textwidth]{figures/scalability.pdf}
     \caption{Verdeutlichung Horizontaler Skalierung}\label{fig:1}
 \end{figure}
-\chapter{EC2-virtual-server}
+\chapter*{Amazon EC2}
+\addcontentsline{toc}{chapter}{Amazon EC2}
+\section{Einführung in Amazon EC2}
+Amazon EC2, ausgeschrieben Amazon Elastic Compute Cloud, ist im Jahr
+2006 als Bestandteil von Amazon Web Services (AWS)
+entstanden.\footcite{AWS} Amazon Web Services gehört dem gleichnamigen
+Tochterunternehmen des Online-Versandhändlers Amazon.com.\footcite{WIK}
+Das Tochterunternehmen deckt verschiedene Sparten des Cloud-Computing
+ab. Darunter fallen diverse Bereiche wie Rechenpower in Form von
+virtuellen Servern und Containern, Speicher in Form des Amazon Web
+Service S3 (Simple Storage Service) oder des Datenbank-Services Amazon
+RDS (Relational Database Service) oder Netzwerk in Form von CloudFront,
+einem Content Delivery Network von Amazon Web Services. Weitere Dienste
+sind zum Beispiel IAM (Identity and Access Managament), Lightsail oder Beanstalk.
+Damit sind noch lange nicht alle Services genannt. In dieser Arbeit soll
+es aber explizit um Amazon EC2 (Elastic Compute Cloud) gehen.
 
-\chapter{EC2-container}
-\chapter{Unterschiede zwischen EC2-virtual-server und EC2-container}
+
+
+
+\section{EC2-virtual-server}
+\section{EC2-container}
+\section{Unterschiede zwischen EC2-virtual-server und EC2-container}
 \nocite{*}
 \printbibliography
 \listoffigures
