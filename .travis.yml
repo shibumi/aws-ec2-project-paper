@@ -1,9 +1,9 @@
 before_install:
 - sudo apt-get update && sudo apt-get install --no-install-recommends texlive-fonts-recommended
-  texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng
+  texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng biber
 script:
 - mkdir build
-- pdflatex -output-directory build essay.tex
+- latexmk -pdf -output-directory build essay.tex
 deploy:
   provider: releases
   api_key:
