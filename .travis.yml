@@ -2,7 +2,7 @@ dist: trusty
 sudo: required
 before_install:
 - sudo apt-get update && sudo apt-get install --no-install-recommends texlive-fonts-recommended
-  texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng biber
+  texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng biber latexmk
 script:
 - mkdir build
 - latexmk -pdf -output-directory build essay.tex
