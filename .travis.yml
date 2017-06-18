@@ -6,7 +6,6 @@ before_install:
 script:
 - mkdir build
 - latexmk -pdf -output-directory=build essay.tex
-- ls -R .
 deploy:
   provider: releases
   api_key:
