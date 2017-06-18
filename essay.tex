@@ -1,6 +1,6 @@
 \documentclass[titlepage]{report}
 \title{EC2-virtual-server und EC2-container in der Amazon AWS Cloud \\
-\large Eine Seminar-Arbeit bei Prof. Dr. -Ing. Dr. rer. nat. habil. \\
+\small Eine Seminar-Arbeit bei Prof. Dr. -Ing. Dr. rer. nat. habil. \\
 Harald Richter}
 \usepackage[ngerman]{babel}
 \usepackage[backend=biber,style=alphabetic]{biblatex}
@@ -66,11 +66,12 @@ Nachteile sowie Unterschiede zwischen beiden Konzepten hervorgehoben.
 \end{figure}
 \chapter*{Amazon EC2}
 \addcontentsline{toc}{chapter}{Amazon EC2}
-\section{Einführung in Amazon EC2}
+\section*{Einführung in Amazon EC2}
+\addcontentsline{toc}{section}{Einführung in Amazon EC2}
 Amazon EC2, ausgeschrieben Amazon Elastic Compute Cloud, ist im Jahr
 2006 als Bestandteil von Amazon Web Services (AWS)
-entstanden.\footcite{AWS} Amazon Web Services gehört dem gleichnamigen
-Tochterunternehmen des Online-Versandhändlers Amazon.com.\footcite{WIK}
+entstanden.\footcite{Incb} Amazon Web Services gehört dem gleichnamigen
+Tochterunternehmen des Online-Versandhändlers Amazon.com.\footcite{Fou}
 Das Tochterunternehmen deckt verschiedene Sparten des Cloud-Computing
 ab. Darunter fallen diverse Bereiche wie Rechenpower in Form von
 virtuellen Servern und Containern, Speicher in Form des Amazon Web
@@ -79,8 +80,17 @@ RDS (Relational Database Service) oder Netzwerk in Form von CloudFront,
 einem Content Delivery Network von Amazon Web Services. Weitere Dienste
 sind zum Beispiel IAM (Identity and Access Managament), Lightsail oder Beanstalk.
 Damit sind noch lange nicht alle Services genannt. In dieser Arbeit soll
-es aber explizit um Amazon EC2 (Elastic Compute Cloud) gehen.
-
+es aber explizit um Amazon EC2 (Elastic Compute Cloud) gehen. Einige der
+Hauptmerkmale von Amazon Elastic Compute Cloud sind:
+\begin{itemize}
+    \item Hohe Skalierbarkeit
+    \item Webservice mit API
+    \item Instanzen sind On-Demand verfügbar innerhalb von Minuten anstatt Stunden oder Tagen
+    \item Service Level Agreement garantiert 99,95\% uptime \footcite{Inca}
+    \item Rechenzentren in verschiedenen Regionen der Welt
+    \item Integration in andere Amazon Web Services: Zum Beispiel S3
+    \item Kostengünstig: Es wird nur für genutzte Rechenkapazität bezahlt
+\end{itemize}
 
 
 
