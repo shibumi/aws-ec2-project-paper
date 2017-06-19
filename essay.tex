@@ -94,14 +94,30 @@ Hauptmerkmale von Amazon Elastic Compute Cloud sind:
 Wenn man von Amazon EC2 spricht, spricht man fast immer von virtuellen
 Maschinen in der Amazon Web Services Cloud. Als Grundlage für diese
 virtuellen Maschinen oder auch Instanzen (englisch Instance) dienen
-sogenannte Amazon Machine Images (AMI). Amazon Machine Images können
-verschiedene Betriebssysteme beinhalten. Angefangen bei Microsoft
-Windows über diverse Linux Derivate wie Red Hat Linux (RHEL), Debian
-oder CentOS. Anhand von diesen AMIs lassen sich dann wiederum Instanzen
-starten. Kosten werden nur verursacht während eine Instanz gestartet
-ist. (Bei einigen Amazon Machine Images können Lizenzkosten anfallen,
-zum Beispiel Windows). Desweiteren lassen sich Amazon Machine Images
-beliebig konfigurieren.
+sogenannte Amazon Machine Images (AMI).\footcite{Incc} Amazon Machine
+Images können verschiedene Betriebssysteme beinhalten. Angefangen bei
+Microsoft Windows über diverse Linux Derivate wie Red Hat Linux (RHEL),
+Debian oder CentOS. Anhand von diesen AMIs lassen sich dann wiederum
+Instanzen starten. Kosten werden nur verursacht während eine Instanz
+gestartet ist. (Bei einigen Amazon Machine Images können Lizenzkosten
+anfallen, zum Beispiel Windows). Desweiteren lassen sich Amazon Machine
+Images beliebig konfigurieren. Diese Konfiguration umfasst aber nur
+Einstellungen auf Betriebssystemebene. Um Parameter wie CPU, RAM,
+Speicher oder Netzwerk einzustellen bietet Amazon Web Services eine
+Palette von sogenannten Instanztypen (englisch Instance-Types) an.
+Diese Instanztypen decken ein breites Spektrum von unterschiedlichen
+Konfigurationen ab. Angefangen beim kleinsten Instanztyp dem T2.nano mit
+einem virtuellen CPU-Kern und 0.5GiB Arbeitsspeicher bis hin zum größten
+Instanztyp wie dem m4.16xlarge mit 64 virtuellen CPU-Kernen, 256GiB
+Arbeitsspeicher und einer dedizierten EBS-Bandbreite von 10.000 Mbit/s.
+\footcite{Incd} EBS steht für Elastic Block Store und ist eine
+dedizierte Speichereinheit in der Amazon Web Services Cloud. Elastic
+Block Store kann auf jede beliebige Größe angepasst werden und ist
+unabhängig von der Elastic Compute Cloud. So überlebt Elastic Block
+Store beispielsweise einen Reboot der virtuellen Maschine und kann auch
+an andere Instanzen angedockt/gemounted werden. Durch diese Eigenschaft
+ist es möglich ohne Probleme innerhalb von Minuten von einer Instanz auf eine andere
+umzuziehen.
 
 
 \section{EC2-virtual-server}
