@@ -139,7 +139,53 @@ t2.2xlarge & 8    & 81                  & 32                    & Nur EBS     \\
     \includegraphics[width=1.0\textwidth]{figures/EC2-Landscape.pdf}
     \caption{Übersicht über die EC2-Instanz-Landschaft}\label{fig:1}
 \end{figure}
-
+\section{Regionen}
+Um eine weitgefächerte Verfügbarkeit und Skalierbarkeit zu gewährleisten
+hat Amazon Web Services Rechenzentren in einem Dutzend Ländern. Dadurch
+ist es möglich die Latenz von Webseiten und internetbasierten
+Anwendungen so klein wie möglich zu halten. Dies hat nicht nur eine
+höhere Kundenzufriedenheit zur Folge sondern hat auch technische
+Vorteile.(beispielsweise für Video-Anwendungen). Zur Zeit unterhält
+Amazon Web Services Rechenzentren in den folgenden Ländern:
+\begin{itemize}
+    \item USA
+    \item Deutschland
+    \item Volksrepublik China
+    \item Irland
+    \item Großbritannien
+    \item Indien
+    \item Südkorea
+    \item Australien
+    \item Japan
+    \item Singapur
+    \item Kanada
+    \item Brasilien
+\end{itemize}
+Diese Länder sind eingeteilt in folgende Regionen:
+\begin{itemize}
+    \item Nordamerika
+    \item Europa/Naher Osten/Afrika
+    \item Asien/Pazifik
+    \item Südamerika
+\end{itemize}
+Damit sind bis auf den Kontinent Afrika, alle besiedelten Kontinente
+abgedeckt. Zusätzlich zu diesen Regionen gibt es noch sogenannte
+High-Availability-Zones (Hoch-Verfügbarkeits-Zonen). Eine Region kann
+mehrere dieser High-Availability-Zonen haben. Im Endeffekt handelt es
+sich bei diesen Zonen um physische Rechenzentren in verschiedenen
+Städten innerhalb einer Region. Für die Region Nordamerika ist dies
+beispielsweise \footcite{Ince}:
+\begin{itemize}
+    \item USA Ost (Nord-Virginia)
+    \item USA Ost (Ohio)
+    \item USA West (Oregon)
+    \item USA West (Nordkalifornien)
+    \item Kanada
+    \item AWS GovCloud
+\end{itemize}
+AWS GovCloud ist eine Sonderzone und isoliert von allen anderen Zonen.
+AWS GovCloud hosted Applikationen und Informationen der
+US-Regierung.\footcite{Incf}
 
 \section{EC2-virtual-server}
 \section{EC2-container}
