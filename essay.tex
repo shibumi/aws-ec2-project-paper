@@ -70,7 +70,7 @@ Nachteile sowie Unterschiede zwischen beiden Konzepten hervorgehoben.
 \addcontentsline{toc}{section}{Einführung in Amazon EC2}
 Amazon EC2, ausgeschrieben Amazon Elastic Compute Cloud, ist im Jahr
 2006 als Bestandteil von Amazon Web Services (AWS)
-entstanden.\footcite{Incb} Amazon Web Services gehört dem gleichnamigen
+entstanden.\footcite{aws} Amazon Web Services gehört dem gleichnamigen
 Tochterunternehmen des Online-Versandhändlers Amazon.com.\footcite{Fou}
 Das Tochterunternehmen deckt verschiedene Sparten des Cloud-Computing
 ab. Darunter fallen diverse Bereiche wie Rechenpower in Form von
@@ -86,7 +86,7 @@ Hauptmerkmale von Amazon Elastic Compute Cloud sind:
     \item Hohe Skalierbarkeit
     \item Webservice mit API
     \item Instanzen sind On-Demand verfügbar innerhalb von Minuten anstatt Stunden oder Tagen
-    \item Service Level Agreement garantiert 99,95\% uptime \footcite{Inca}
+    \item Service Level Agreement garantiert 99,95\% uptime\footcite{ec2}
     \item Rechenzentren in verschiedenen Regionen der Welt
     \item Integration in andere Amazon Web Services: Zum Beispiel S3
     \item Kostengünstig: Es wird nur für genutzte Rechenkapazität bezahlt
@@ -94,7 +94,7 @@ Hauptmerkmale von Amazon Elastic Compute Cloud sind:
 Wenn man von Amazon EC2 spricht, spricht man fast immer von virtuellen
 Maschinen in der Amazon Web Services Cloud. Als Grundlage für diese
 virtuellen Maschinen oder auch Instanzen (englisch Instance) dienen
-sogenannte Amazon Machine Images (AMI).\footcite{Incc} Amazon Machine
+sogenannte Amazon Machine Images (AMI).\footcite{ec2details} Amazon Machine
 Images können verschiedene Betriebssysteme beinhalten. Angefangen bei
 Microsoft Windows über diverse Linux Derivate wie Red Hat Linux (RHEL),
 Debian oder CentOS. Anhand von diesen AMIs lassen sich dann wiederum
@@ -110,7 +110,7 @@ Konfigurationen ab. Angefangen beim kleinsten Instanztyp dem T2.nano mit
 einem virtuellen CPU-Kern und 0.5GiB Arbeitsspeicher bis hin zum größten
 Instanztyp wie dem m4.16xlarge mit 64 virtuellen CPU-Kernen, 256GiB
 Arbeitsspeicher und einer dedizierten EBS-Bandbreite von 10.000 Mbit/s.
-\footcite{Incd} EBS steht für Elastic Block Store und ist eine
+\footcite{instance} EBS steht für Elastic Block Store und ist eine
 dedizierte Speichereinheit in der Amazon Web Services Cloud. Elastic
 Block Store kann auf jede beliebige Größe angepasst werden und ist
 unabhängig von der Elastic Compute Cloud. So überlebt Elastic Block
@@ -119,9 +119,9 @@ an andere Instanzen angedockt/gemounted werden. Durch diese Eigenschaft
 ist es möglich ohne Probleme innerhalb von Minuten von einer Instanz auf eine andere
 umzuziehen.
 \begin{table}[h]
-\centering
-\caption{Beispiel für die Varianz der Instanzen anhand vom Typ
-    T2\footcite{Incd}}
+    \centering
+    \caption{Beispiel für die Varianz der Instanzen anhand vom Typ T2\footcite{Instance}}
+    \label{tab:1}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 Modell     & vCPU & CPU-Guthaben/Stunde & Arbeitsspeicher (GiB) & Speicherung \\ \hline
@@ -137,7 +137,7 @@ t2.2xlarge & 8    & 81                  & 32                    & Nur EBS     \\
 \begin{figure}[h]
     \centering
     \includegraphics[width=1.0\textwidth]{figures/EC2-Landscape.pdf}
-    \caption{Übersicht über die EC2-Instanz-Landschaft}\label{fig:1}
+    \caption{Übersicht über die EC2-Instanz-Landschaft}\label{fig:2}
 \end{figure}
 \section{Regionen}
 Um eine weitgefächerte Verfügbarkeit und Skalierbarkeit zu gewährleisten
@@ -170,7 +170,7 @@ Diese Länder sind eingeteilt in folgende geographische Regionen:
 \end{itemize}
 Damit sind bis auf den Kontinent Afrika, alle besiedelten Kontinente
 abgedeckt. Diese geographischen Regionen sind dann nochmal in Regionen
-unterteilt. Für Nordamerika wären das beispielsweise\footcite{Ince}:
+unterteilt. Für Nordamerika wären das beispielsweise\footcite{region}:
 \begin{itemize}
     \item USA Ost (Nord-Virginia)
     \item USA Ost (Ohio)
@@ -181,7 +181,7 @@ unterteilt. Für Nordamerika wären das beispielsweise\footcite{Ince}:
 \end{itemize}
 AWS GovCloud ist eine Sonder-Region und isoliert von allen anderen
 Regionen. Der Grund dafür ist, dass AWS GovCloud Applikationen und Informationen der
-US-Regierung hosted.\footcite{Incf}
+US-Regierung hosted.\footcite{govcloud}
 Zusätzlich zu diesen Regionen gibt es noch sogenannte
 High-Availability-Zones (Hoch-Verfügbarkeits-Zonen). Eine Region kann
 mehrere dieser High-Availability-Zonen haben. Im Endeffekt handelt es
