@@ -3,7 +3,7 @@
 \small Eine Seminar-Arbeit bei Prof. Dr. -Ing. Dr. rer. nat. habil. \\
 Harald Richter}
 \usepackage[ngerman]{babel}
-\usepackage[backend=biber,style=alphabetic]{biblatex}
+\usepackage[backend=biber,style=numeric]{biblatex}
 \addbibresource{literature.bib}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -145,7 +145,7 @@ hat Amazon Web Services Rechenzentren in einem Dutzend Ländern. Dadurch
 ist es möglich die Latenz von Webseiten und internetbasierten
 Anwendungen so klein wie möglich zu halten. Dies hat nicht nur eine
 höhere Kundenzufriedenheit zur Folge sondern hat auch technische
-Vorteile.(beispielsweise für Video-Anwendungen). Zur Zeit unterhält
+Vorteile (beispielsweise für Video-Anwendungen). Zur Zeit unterhält
 Amazon Web Services Rechenzentren in den folgenden Ländern:
 \begin{itemize}
     \item USA
@@ -161,7 +161,7 @@ Amazon Web Services Rechenzentren in den folgenden Ländern:
     \item Kanada
     \item Brasilien
 \end{itemize}
-Diese Länder sind eingeteilt in folgende Regionen:
+Diese Länder sind eingeteilt in folgende geographische Regionen:
 \begin{itemize}
     \item Nordamerika
     \item Europa/Naher Osten/Afrika
@@ -169,12 +169,8 @@ Diese Länder sind eingeteilt in folgende Regionen:
     \item Südamerika
 \end{itemize}
 Damit sind bis auf den Kontinent Afrika, alle besiedelten Kontinente
-abgedeckt. Zusätzlich zu diesen Regionen gibt es noch sogenannte
-High-Availability-Zones (Hoch-Verfügbarkeits-Zonen). Eine Region kann
-mehrere dieser High-Availability-Zonen haben. Im Endeffekt handelt es
-sich bei diesen Zonen um physische Rechenzentren in verschiedenen
-Städten innerhalb einer Region. Für die Region Nordamerika ist dies
-beispielsweise \footcite{Ince}:
+abgedeckt. Diese geographischen Regionen sind dann nochmal in Regionen
+unterteilt. Für Nordamerika wären das beispielsweise\footcite{Ince}:
 \begin{itemize}
     \item USA Ost (Nord-Virginia)
     \item USA Ost (Ohio)
@@ -183,10 +179,15 @@ beispielsweise \footcite{Ince}:
     \item Kanada
     \item AWS GovCloud
 \end{itemize}
-AWS GovCloud ist eine Sonderzone und isoliert von allen anderen Zonen.
-AWS GovCloud hosted Applikationen und Informationen der
-US-Regierung.\footcite{Incf}
-
+AWS GovCloud ist eine Sonder-Region und isoliert von allen anderen
+Regionen. Der Grund dafür ist, dass AWS GovCloud Applikationen und Informationen der
+US-Regierung hosted.\footcite{Incf}
+Zusätzlich zu diesen Regionen gibt es noch sogenannte
+High-Availability-Zones (Hoch-Verfügbarkeits-Zonen). Eine Region kann
+mehrere dieser High-Availability-Zonen haben. Im Endeffekt handelt es
+sich bei diesen Zonen um physische Rechenzentren in verschiedenen
+Städten innerhalb einer Region. Die Region USA Ost (Nord
+Virginia) hat beispielsweise 5 High-Availability-Zonen.
 \section{EC2-virtual-server}
 \section{EC2-container}
 \section{Unterschiede zwischen EC2-virtual-server und EC2-container}
