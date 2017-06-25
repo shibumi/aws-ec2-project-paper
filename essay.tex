@@ -142,7 +142,7 @@ t2.2xlarge & 8    & 81                  & 32                    & Nur EBS     \\
 \section{Regionen}
 Um eine weitgefächerte Verfügbarkeit und Skalierbarkeit zu gewährleisten
 hat Amazon Web Services Rechenzentren in einem Dutzend Ländern. Dadurch
-ist es möglich die Latenz von Webseiten und internetbasierten
+ist es möglich die Latenz und Fehlerquote von Webseiten und internetbasierten
 Anwendungen so klein wie möglich zu halten. Dies hat nicht nur eine
 höhere Kundenzufriedenheit zur Folge sondern hat auch technische
 Vorteile (beispielsweise für Video-Anwendungen). Zur Zeit unterhält
@@ -187,7 +187,16 @@ High-Availability-Zones (Hoch-Verfügbarkeits-Zonen). Eine Region kann
 mehrere dieser High-Availability-Zonen haben. Im Endeffekt handelt es
 sich bei diesen Zonen um physische Rechenzentren in verschiedenen
 Städten innerhalb einer Region. Die Region USA Ost (Nord
-Virginia) hat beispielsweise 5 High-Availability-Zonen.
+Virginia) hat beispielsweise 5 High-Availability-Zonen. Durch diese
+High-Availability-Zonen kann man Applikationen mehrfach in einer Region
+deployen, dadurch erhält man automatische, unterbrechungsfreie Failover
+die zu einer hohen Redundanz führen.\footcite{region} Realisiert wird
+dies durch private Glasfasernetzwerke zwischen den einzelnen
+High-Availability-Zonen. Dies lässt sich dann weiter hochskalieren über
+ganze Regionen. Außerdem gibt es noch sogenannte
+AWS-Edge-Network-Standorte. Dies sind meistens Standorte für
+Content-Delivery-Netzwerke, kleinere Rechenzentren oder
+Peering-Endpunkte.
 \section{EC2-virtual-server}
 \section{EC2-container}
 \section{Unterschiede zwischen EC2-virtual-server und EC2-container}
