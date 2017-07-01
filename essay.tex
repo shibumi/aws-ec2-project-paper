@@ -184,7 +184,7 @@ unterteilt. Für Nordamerika wären das beispielsweise\footcite{region}:
 AWS GovCloud ist eine Sonder\hyp{}Region und isoliert von allen anderen
 Regionen. Der Grund dafür ist, dass AWS GovCloud Applikationen und
 Informationen der US\hyp{}Regierung hosted.\footcite{govcloud} Zusätzlich zu
-diesen Regionen gibt es noch sogenannte High\hyp{}Availability\hyp{}Zones
+diesen Regionen gibt es noch High\hyp{}Availability\hyp{}Zones
 (Hoch\hyp{}Verfügbarkeits\hyp{}Zonen). Eine Region kann mehrere dieser
 High\hyp{}Availability\hyp{}Zonen haben. Im Endeffekt handelt es sich bei
 diesen Zonen um physische Rechenzentren in verschiedenen Städten innerhalb
@@ -195,9 +195,9 @@ Region deployen, dadurch erhält man automatische, unterbrechungsfreie Failover
 die zu einer hohen Redundanz führen.\footcite{region} Realisiert wird dies
 durch private Glasfasernetzwerke zwischen den einzelnen
 High\hyp{}Availability\hyp{}Zonen. Dies lässt sich dann weiter hochskalieren
-über ganze Regionen. Außerdem gibt es noch sogenannte
+über ganze Regionen. Außerdem gibt es noch
 AWS\hyp{}Edge\hyp{}Network\hyp{}Standorte. Dies sind meistens Standorte für
-Content\hyp{}Delivery-Netzwerke, kleinere Rechenzentren oder
+Content\hyp{}Delivery\hyp{}Netzwerke, kleinere Rechenzentren oder
 Peering\hyp{}Endpunkte.
 \section{Virtualisierung}
 Einer der Schlüsselfaktoren für die gute Skalierbarkeit von Amazon EC2
@@ -211,7 +211,7 @@ Maschinen also vor, sie wären nur auf einem System.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{figures/hypervisor.pdf}
-    \caption{Visualisierung der Hypervisor-Technologie}\label{fig:3}
+    \caption{Visualisierung der Hypervisor\hyp{}Technologie}\label{fig:3}
 \end{figure}
 Amazon Machine Images unterstützen zwei verschiedene Arten von
 Virtualisierung:
@@ -221,25 +221,25 @@ Virtualisierung:
 \end{itemize}
 ``Der Hauptunterschied zwischen PV und HVM basierten Amazon Machine
 Images besteht im verwendeten Bootloader und der Verfügbarkeit von
-speziellen Hardware-Erweiterungen (CPU, Netzwerk, Speicher) für bessere
+speziellen Hardware\hyp{}Erweiterungen (CPU, Netzwerk, Speicher) für bessere
 Performance.''\footcite{virtualization} Bei PV basierten Amazon Machine
-Images wird also keine Hardware-Emulation benutzt. Dies bedeutet im
+Images wird also keine Hardware\hyp{}Emulation benutzt. Dies bedeutet im
 Umkehrschluss, dass das jeweilige Betriebssystem in der virtuellen Maschine nur
-software-seitig emuliert wird. Dadurch hat die VM dann auch keinen
+software\hyp{}seitig emuliert wird. Dadurch hat die VM dann auch keinen
 direkten Zugang zur Hardware und wird dazu gezwungen den Umweg über den
 Hypervisor zu nehmen, dies kostet Ressourcen und mindert die
 Performance. Vorteil an PV basierten Hosts ist allerdings, dass die
 Hardware keinen Support für Virtualisierung benötigt. (Dies ist meistens
 bei älterer oder sehr billiger Hardware der Fall). Hinzukommend nutzen
 PV basierte AMIs einen speziellen Bootloader (eine gepatchte Version des
-bekannten Linux Bootloaders GRUB), welcher den Boot-Zyklus in
+bekannten Linux Bootloaders GRUB), welcher den Boot\hyp{}Zyklus in
 Gang setzt und danach den richtigen Kernel
 lädt.\footcite{virtualization} Bei HVM basierten Amazon Machine Images
-hingegen virtualisiert die Hardware die Gast-Systeme (dies geschieht
-beispielsweise durch die Intel Virtualization Technology (Intel VT-x)).
+hingegen virtualisiert die Hardware die Gast\hyp{}Systeme (dies geschieht
+beispielsweise durch die Intel Virtualization Technology (Intel VT\hyp{}x)).
 Dies hat nicht nur eine bessere Performance der virtualisierten
 Instanzen zur Folge sondern ermöglicht auch den direkten Zugriff auf
-einzelne Hardware-Komponenten wie beispielsweise GPU oder Netzwerk.
+einzelne Hardware\hyp{}Komponenten wie beispielsweise GPU oder Netzwerk.
 \section{EC2\hyp{}virtual\hyp{}server}
 \section{EC2\hyp{}container}
 \section{Unterschiede zwischen EC2\hyp{}virtual\hyp{}server und EC2\hyp{}container}
