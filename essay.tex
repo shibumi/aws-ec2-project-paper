@@ -198,6 +198,30 @@ AWS-Edge-Network-Standorte. Dies sind meistens Standorte für
 Content-Delivery-Netzwerke, kleinere Rechenzentren oder
 Peering-Endpunkte.
 \section{Virtualisierung}
+Einer der Schlüsselfaktoren für die gute Skalierbarkeit von Amazon EC2
+ist die Virtualisierung. Durch den Einsatz von Virtualisierung ist es
+möglich mehrere virtuelle Hosts auf einer Hardware laufen zu lassen.
+Das Prinzip dahinter ist relativ simpel. Auf dem OS der Hardware läuft
+ein Hypervisor oder auch Virtual Machine Monitor (VMM). Über diesen
+Hypervisor können dann mehrere Instanzen von virtuellen Servern auf der
+selben Hardware gestartet werden. Der Hypervisor gaukelt den einzelnen
+Maschinen also vor, sie wären nur auf einem System.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/hypervisor.pdf}
+    \caption{Visualisierung der Hypervisor-Technologie}\label{fig:3}
+\end{figure}
+Amazon Machine Images unterstützen zwei verschiedene Arten von
+Virtualisierung:
+\begin{itemize}
+    \item paravirtual (PV)
+    \item hardware virtual machine (HVM)
+\end{itemize}
+``Der Hauptunterschied zwischen PV und HVM basierten Amazon Machine
+Images besteht im verwendeten Bootloader und der Verfügbarkeit von
+speziellen Hardware-Erweiterungen (CPU, Netzwerk, Speicher) für bessere
+Performance.''\footcite{virtualization}
+
 \section{EC2-virtual-server}
 \section{EC2-container}
 \section{Unterschiede zwischen EC2-virtual-server und EC2-container}
