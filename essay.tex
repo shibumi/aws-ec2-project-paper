@@ -19,7 +19,7 @@ Harald Richter}
 \chapter*{Einleitung}
 \addcontentsline{toc}{chapter}{Einleitung}
 Im Zeitalter immer fortschreitender Digitalisierung wächst die Nachfrage
-nach billigem Speicherplatz und Rechenpower zunehmends. Der Trend geht
+nach günstigem Speicherplatz und Rechenpower zunehmends. Der Trend geht
 deshalb immer mehr zum Cloud Computing.  ``Zwei von drei Unternehmen (65
 Prozent) haben in Deutschland im Jahr 2016 Cloud Computing
 eingesetzt.''\footcite{SWG17} Cloud Computing ist die Möglichkeit
@@ -96,7 +96,7 @@ Hauptmerkmale von Amazon Elastic Compute Cloud sind:
 Wenn man von Amazon EC2 spricht, spricht man fast immer von virtuellen
 Maschinen in der Amazon Web Services Cloud. Als Grundlage für diese
 virtuellen Maschinen oder auch Instanzen (englisch Instance) dienen
-sogenannte Amazon Machine Images (AMI).\footcite{ec2details} Amazon Machine
+Amazon Machine Images (AMI).\footcite{ec2details} Amazon Machine
 Images können verschiedene Betriebssysteme beinhalten. Angefangen bei
 Microsoft Windows über diverse Linux Derivate wie Red Hat Linux (RHEL),
 Debian oder CentOS. Anhand von diesen AMIs lassen sich dann wiederum
@@ -106,7 +106,7 @@ anfallen, zum Beispiel Windows). Desweiteren lassen sich Amazon Machine
 Images beliebig konfigurieren. Diese Konfiguration umfasst aber nur
 Einstellungen auf Betriebssystemebene. Um Parameter wie CPU, RAM,
 Speicher oder Netzwerk einzustellen bietet Amazon Web Services eine
-Palette von sogenannten Instanztypen (englisch Instance\hyp{}Types) an.
+Palette von Instanztypen (englisch Instance\hyp{}Types) an.
 Diese Instanztypen decken ein breites Spektrum von unterschiedlichen
 Konfigurationen ab. Angefangen beim kleinsten Instanztyp dem T2.nano mit
 einem virtuellen CPU\hyp{}Kern und 0.5GiB Arbeitsspeicher bis hin zum größten
@@ -200,6 +200,46 @@ AWS\hyp{}Edge\hyp{}Network\hyp{}Standorte. Dies sind meistens Standorte für
 Content\hyp{}Delivery-Netzwerke, kleinere Rechenzentren oder
 Peering\hyp{}Endpunkte.
 \section{Virtualisierung}
+Einer der Schlüsselfaktoren für die gute Skalierbarkeit von Amazon EC2
+ist die Virtualisierung. Durch den Einsatz von Virtualisierung ist es
+möglich mehrere virtuelle Hosts auf einer Hardware laufen zu lassen.
+Das Prinzip dahinter ist relativ simpel. Auf dem OS der Hardware läuft
+ein Hypervisor oder auch Virtual Machine Monitor (VMM). Über diesen
+Hypervisor können dann mehrere Instanzen von virtuellen Servern auf der
+selben Hardware gestartet werden. Der Hypervisor gaukelt den einzelnen
+Maschinen also vor, sie wären nur auf einem System.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/hypervisor.pdf}
+    \caption{Visualisierung der Hypervisor-Technologie}\label{fig:3}
+\end{figure}
+Amazon Machine Images unterstützen zwei verschiedene Arten von
+Virtualisierung:
+\begin{itemize}
+    \item paravirtual (PV)
+    \item hardware virtual machine (HVM)
+\end{itemize}
+``Der Hauptunterschied zwischen PV und HVM basierten Amazon Machine
+Images besteht im verwendeten Bootloader und der Verfügbarkeit von
+speziellen Hardware-Erweiterungen (CPU, Netzwerk, Speicher) für bessere
+Performance.''\footcite{virtualization} Bei PV basierten Amazon Machine
+Images wird also keine Hardware-Emulation benutzt. Dies bedeutet im
+Umkehrschluss, dass das jeweilige Betriebssystem in der virtuellen Maschine nur
+software-seitig emuliert wird. Dadurch hat die VM dann auch keinen
+direkten Zugang zur Hardware und wird dazu gezwungen den Umweg über den
+Hypervisor zu nehmen, dies kostet Ressourcen und mindert die
+Performance. Vorteil an PV basierten Hosts ist allerdings, dass die
+Hardware keinen Support für Virtualisierung benötigt. (Dies ist meistens
+bei älterer oder sehr billiger Hardware der Fall). Hinzukommend nutzen
+PV basierte AMIs einen speziellen Bootloader (eine gepatchte Version des
+bekannten Linux Bootloaders GRUB), welcher den Boot-Zyklus in
+Gang setzt und danach den richtigen Kernel
+lädt.\footcite{virtualization} Bei HVM basierten Amazon Machine Images
+hingegen virtualisiert die Hardware die Gast-Systeme (dies geschieht
+beispielsweise durch die Intel Virtualization Technology (Intel VT-x)).
+Dies hat nicht nur eine bessere Performance der virtualisierten
+Instanzen zur Folge sondern ermöglicht auch den direkten Zugriff auf
+einzelne Hardware-Komponenten wie beispielsweise GPU oder Netzwerk.
 \section{EC2\hyp{}virtual\hyp{}server}
 \section{EC2\hyp{}container}
 \section{Unterschiede zwischen EC2\hyp{}virtual\hyp{}server und EC2\hyp{}container}
