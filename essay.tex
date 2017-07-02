@@ -259,8 +259,63 @@ einzelne Hardware\hyp{}Komponenten wie beispielsweise GPU oder Netzwerk.
 \section*{EC2 container}
 \addcontentsline{toc}{section}{EC2 container}
 Als Ergänzung zu den hardware\hyp{} und paravirtualisierten Instanzen
-bietet Amazon Web Services auch Container an.
-
+bietet Amazon Web Services unter dem Produktnamen ``EC2 container'' auch
+Container an. Container sind keine virtuellen Maschinen. Stattdessen
+basieren die bei Amazon Web Services eingesetzten Container auf der
+Docker\hyp{}Technologie. Docker ist eine Opensource\hyp{}Software welche
+anhand von Betriebssystem\hyp{}Kernel\hyp{}Features einzelne Anwendungen
+und dessen benötigte Bibliotheken sowie ganze Betriebssysteme isolieren
+kann. Dadurch ist es möglich ohne Virtualisierung auf einem Host mehrere
+Container mit mehreren Einsatzwecken auszuführen. Dies kann zum Beispiel
+eine einzelne Webanwendung sein oder ein ganzes Linux-Betriebssystem.
+Die Rolle des Hypervisors übernimmt stattdessen der Docker\hyp{}Daemon oder
+die Docker\hyp{}Engine. Als Host\hyp{}System kann ein Microsoft Windows
+oder ein Linux eingesetzt werden. Auf Linux nutzt Docker folgende
+Kernel\hyp{}Features zum isolieren des Docker\hyp{}Containers vom
+restlichen Betriebssystem:
+\begin{itemize}
+    \item Namespaces
+    \item Control groups
+    \item Union file systems
+\end{itemize}
+Bei Namespaces handelt es sich um eine Prozess\hyp{}Virtualisierung.
+Statt einem festen Hypervisor wie beispielsweise KVM oder Xen wird dafür
+der system call ``setns()'' des Linux\hyp{}Kernels benutzt. Der
+``setns()''\hyp{}syscall existiert im Linux\hyp{}Kernel seit Version
+3.0.\footcite{setns} Die Prozess\hyp{}Virtualisierung ist nichts anderes als
+eine Prozess\hyp{}Isolation. Ein Prozess hat also nur eine eingeschränkte
+Sichtweite und kann nur innerhalb seines zugewiesenen Namespaces
+agieren. Docker benutzt die folgenden 5 Namespaces:\footcite{docker}
+\begin{itemize}
+    \item The ipc namespace: Managing access to IPC resources (IPC: InterProcess Communication).
+    \item The net namespace: Managing network interfaces (NET: Networking).
+    \item The pid namespace: Process isolation (PID: Process ID).
+    \item The mnt namespace: Managing filesystem mount points (MNT: Mount).
+    \item The uts namespace: Isolating kernel and version identifiers. (UTS: Unix Timesharing System).
+\end{itemize}
+Der \textbf{ipc} Namespace regelt den Zugriff auf Ressourcen für
+Interprozesskommunikation. Da der Linux\hyp{}Kernel immer noch keine
+Interprozesskommunikation auf Kernel\hyp{}Ebene besitzt werden die
+üblichen Ressourcen dafür benutzt. Also Sockets, Shared Memory und
+Pipes.\footcite{ipc} Der \textbf{net} Namespace managed den Zugriff auf
+Netzwerk\hyp{}Ressourcen wie beispielsweise Ethernet\hyp{} oder
+WLAN\hyp{}Interfaces. Der \textbf{pid} Namespace ist wiederum für die
+Prozess\hyp{}Isolation zuständig. Dazu wird praktisch innerhalb eines
+Prozesses ein eigener Prozess\hyp{}Namespace angelegt in dem dann nach
+belieben weitere isolierte Prozesse gespawned werden können. Beim
+\textbf{mnt} Namespace werden die Mount\hyp{}Points im Filesystem
+isoliert. Dadurch stellt der Docker\hyp{}Daemon sicher, dass die
+einzelnen isolierten Container auch wirklich nur Zugriff auf die Teile
+des Filesystems haben auf die sie auch Zugriff haben sollen. Der letzte
+für Docker wichtige Namespace, der \textbf{uts} Namespace isoliert den
+Kernel und sorgt für die richtige Zeit in den Containern. Eine korrekte
+Unix\hyp{}Zeit ist enorm wichtig für ordentliche Kryptographie und
+verteilte Anwendungen. Ein weiteres wichtiges Kernel\hyp{}Feature für
+Container unter Linux sind Control Groups. Control Groups oder auch
+\textbf{cgroups} isolieren Ressourcen für eine Gruppe von
+Prozessen.\footcite{cgroups}
+\textbf{cgroups} können dafür auf die Namespaces zur Isolation zurück
+greifen.
 \section{Unterschiede zwischen EC2\hyp{}virtual\hyp{}server und EC2\hyp{}container}
 \nocite{*}
 \printbibliography
