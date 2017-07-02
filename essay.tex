@@ -137,8 +137,15 @@ t2.xlarge  & 4    & 54                  & 16                    & Nur EBS     \\
 t2.2xlarge & 8    & 81                  & 32                    & Nur EBS     \\ \hline
 \end{tabular}
 \end{table}
-\\
-Die Namensgebung der verschiedenen Instanzen folgt einem festen Muster:
+\newpage
+Die Namensgebung der verschiedenen Instanzen folgt einem festen Muster.
+Eine Instanzfamilie bezeichnet die verschiedenen
+Instanz\hyp{}Optimierungen in Bezug auf GPU,CPU,Netzwerk oder Speicher.
+Die Instanzgenerationen unterscheiden sich zum Beispiel durch den
+Einsatz von Virtualisierungstechniken oder anderen Features. Die
+Instanzgröße wiederum bezeichnet die Ausstattung der Instanz im Bezug
+auf numerische Werte wie die Anzahl der virtuellen CPU\hyp{}Kerne,
+Arbeitsspeicher, Netzwerk etc.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{figures/instance.pdf}
@@ -149,6 +156,7 @@ Die Namensgebung der verschiedenen Instanzen folgt einem festen Muster:
     \includegraphics[width=1.0\textwidth]{figures/EC2-Landscape.pdf}
     \caption{Übersicht über die EC2\hyp{}Instanz\hyp{}Landschaft}\label{fig:3}
 \end{figure}
+\newpage
 \section*{Regionen}
 \addcontentsline{toc}{section}{Regionen}
 Um eine weitgefächerte Verfügbarkeit und Skalierbarkeit zu gewährleisten
@@ -319,7 +327,41 @@ systems essentiell für Docker\hyp{}basierte Systeme. Union file systems
 ist ein Sammelbegriff für Filesysteme die das Filesystem in Schichten
 unterteilen. Darunter fallen zum Beispiel btrfs, AUFS, vfs oder
 DeviceMapper.\footcite{docker}
-\section{Unterschiede zwischen EC2\hyp{}virtual\hyp{}server und EC2\hyp{}container}
+Dadurch, dass bei Containern keine Virtualisierung stattfindet sondern
+nur eine Prozess\hyp{}Isolierung wird beim Einsatz von Containern viel
+weniger Ressourcen benutzt als bei gängigen Virtualisierungstechniken.
+Mit diesem Ansatz lassen sich ganze Cluster bauen aus mehreren
+Containern und kann so einzelne Applikationen oder Bausteine einer
+größeren Anwendung gezielt kapseln und Einzelteile austauschen oder
+andersweitig modifizieren. (Zum Beispiel durch die Zuweisung von mehr
+Ressourcen). Außerdem ist im Entwicklungsprozess einer Anwendung es
+möglich, wenn Container verwendet werden, eine Anwendung einfacher in
+eine Cloud\hyp{}Umgebung einzupflegen. Es muss nur noch der Container an
+der richtigen Stelle platziert werden. Dieser Container bringt dann im
+Idealfall alle Abhängigkeiten für die genannte Anwendung mit und es muss
+nicht zu erst aufwendig eine virtuelle Maschine provisioniert und an die
+Anwendung angepasst werden. Zusätzlich lassen sich Container von
+Entwicklern einfacher importieren. So erspart man sich das Aufsetzen
+einer Entwicklungsumgebung mit allen Eigenheiten der zu entwickelnden
+Applikation. Amazon EC2 Container verfeinert diese Vorzüge von
+Containern sogar noch. Einige der Vorzüge von EC2 Container
+sind:\footcite{container}
+\begin{itemize}
+    \item Einfaches Cluster Management
+    \item Hohe Performance
+    \item Flexibles Scheduling
+    \item Erweiterbarkeit und Portierbarkeit
+    \item Ressourceneffizienz
+    \item Integration in andere AWS\hyp{}Dienste
+    \item Sicherheit durch Integration in Amazon Virtual\hyp{}Private\hyp{}Cloud
+\end{itemize}
+\section*{EC2 virtual server und EC2 container im Vergleich}
+\addcontentsline{toc}{section}{EC2 virtual server und EC2 container im Vergleich}
+
+\section*{Sicherheit}
+\addcontentsline{toc}{section}{Sicherheit}
+\chapter*{Fazit}
+\addcontentsline{toc}{chapter}{Fazit}
 \nocite{*}
 \printbibliography
 \listoffigures
