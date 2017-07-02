@@ -369,6 +369,26 @@ Penetrationstests\footcite{penetration}, eine
 Kontaktadresse um Schwachstellen zu melden und diverse
 Sicherheits\hyp{}Features. Alles Dinge die heutzutage nicht ganz
 selbstverständlich sind aber selbstverständlich sein sollten.
+Amazon Machine Images werden beispielsweise wenn diese via SSH
+(SecureShell) gewartet werden stehts mit SSH\hyp{}Keys statt
+Plaintext\hyp{}Passwörtern abgesichert. SSH\hyp{}Keys sind
+Plaintext\hyp{}Passwörtern in vieler Hinsicht überlegen. Erstens neigt
+man nicht dazu einfache Passwörter zu gestalten und zweitens hat man bei
+SSH\hyp{}Keys mehr Komponenten. Ein SSH\hyp{}Key besteht immer aus zwei
+Teilen. Einem privaten und einem öffentlichen Schlüssel. Der private
+Schlüssel ist meistens noch mit einem Kennwort abgesichert als
+zusätzliche Hürde für den Angreifer. Der öffentliche Schlüssel wird auf
+einem virtuellen Server oder Container abgelegt, der private Schlüssel
+ist im Besitz des Administrators. Amazon Web Services bietet diese
+Möglichkeit solche SSH\hyp{}Keys im Browser zu generieren oder man
+verwendet eigene Keys. Letzteres stellt sicher, dass selbst Amazon nicht
+im Besitz des privaten Schlüssels ist, selbst wenn Amazon dazu in der
+Lage wäre den im Browser generierten privaten Schlüssel abzufangen.
+Desweiteren bietet Amazon Web Services die Möglichkeit
+\textbf{s3}\hyp{}Instanzen zu verschlüsseln. Dies kann
+server\hyp{}seitig von Amazon aus passieren oder client\hyp{}seitig vom
+jeweiligen Benutzer des Dienstes.\footcite{encryption} Letzteres ist mit
+einem erhöhten Aufwand verbunden. 
 \chapter*{Fazit}
 \addcontentsline{toc}{chapter}{Fazit}
 \nocite{*}
