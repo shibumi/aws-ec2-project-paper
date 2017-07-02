@@ -65,6 +65,7 @@ Nachteile sowie Unterschiede zwischen beiden Konzepten hervorgehoben.
     \includegraphics[width=1.0\textwidth]{figures/scalability.pdf}
     \caption{Verdeutlichung Horizontaler Skalierung}\label{fig:1}
 \end{figure}
+\\
 \chapter*{Amazon EC2}
 \addcontentsline{toc}{chapter}{Amazon EC2}
 \section*{Einführung in Amazon EC2}
@@ -119,7 +120,8 @@ unabhängig von der Elastic Compute Cloud. So überlebt Elastic Block
 Store beispielsweise einen Reboot der virtuellen Maschine und kann auch
 an andere Instanzen angedockt/gemounted werden. Durch diese Eigenschaft
 ist es möglich ohne Probleme innerhalb von Minuten von einer Instanz auf eine andere
-umzuziehen.
+umzuziehen. Die Namensgebung für Instanzen folgt einem spezifischen
+Muster.
 \begin{table}[h]
     \centering
     \caption{Beispiel für die Varianz der Instanzen anhand vom Typ T2\footcite{Instance}}
@@ -141,7 +143,13 @@ t2.2xlarge & 8    & 81                  & 32                    & Nur EBS     \\
     \includegraphics[width=1.0\textwidth]{figures/EC2-Landscape.pdf}
     \caption{Übersicht über die EC2\hyp{}Instanz\hyp{}Landschaft}\label{fig:2}
 \end{figure}
-\section{Regionen}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/instance.pdf}
+    \caption{Erläuterung der Amazon Instance Namensgebung}\label{fig:3}
+\end{figure}
+\section*{Regionen}
+\addcontentsline{toc}{chapter}{Regionen}
 Um eine weitgefächerte Verfügbarkeit und Skalierbarkeit zu gewährleisten
 hat Amazon Web Services Rechenzentren in einem Dutzend Ländern. Dadurch
 ist es möglich die Latenz und Fehlerquote von Webseiten und internetbasierten
@@ -199,7 +207,8 @@ High\hyp{}Availability\hyp{}Zonen. Dies lässt sich dann weiter hochskalieren
 AWS\hyp{}Edge\hyp{}Network\hyp{}Standorte. Dies sind meistens Standorte für
 Content\hyp{}Delivery\hyp{}Netzwerke, kleinere Rechenzentren oder
 Peering\hyp{}Endpunkte.
-\section{Virtualisierung}
+\section*{Virtualisierung}
+\addcontentsline{toc}{chapter}{Virtualisierung}
 Einer der Schlüsselfaktoren für die gute Skalierbarkeit von Amazon EC2
 ist die Virtualisierung. Durch den Einsatz von Virtualisierung ist es
 möglich mehrere virtuelle Hosts auf einer Hardware laufen zu lassen.
@@ -211,8 +220,9 @@ Maschinen also vor, sie wären nur auf einem System.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{figures/hypervisor.pdf}
-    \caption{Visualisierung der Hypervisor\hyp{}Technologie}\label{fig:3}
+    \caption{Visualisierung der Hypervisor\hyp{}Technologie}\label{fig:4}
 \end{figure}
+\\
 Amazon Machine Images unterstützen zwei verschiedene Arten von
 Virtualisierung:
 \begin{itemize}
@@ -240,6 +250,11 @@ beispielsweise durch die Intel Virtualization Technology (Intel VT\hyp{}x)).
 Dies hat nicht nur eine bessere Performance der virtualisierten
 Instanzen zur Folge sondern ermöglicht auch den direkten Zugriff auf
 einzelne Hardware\hyp{}Komponenten wie beispielsweise GPU oder Netzwerk.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/hvm_pv.pdf}
+    \caption{HVM und PV im Vergleich}\label{fig:5}
+\end{figure}
 \section{EC2\hyp{}virtual\hyp{}server}
 \section{EC2\hyp{}container}
 \section{Unterschiede zwischen EC2\hyp{}virtual\hyp{}server und EC2\hyp{}container}
