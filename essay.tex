@@ -22,7 +22,7 @@ Im Zeitalter immer fortschreitender Digitalisierung wächst die Nachfrage
 nach günstigem Speicherplatz und Rechenpower zunehmends. Der Trend geht
 deshalb immer mehr zum Cloud Computing.  ``Zwei von drei Unternehmen (65
 Prozent) haben in Deutschland im Jahr 2016 Cloud Computing
-eingesetzt.''\footcite{SWG17} Cloud Computing ist die Möglichkeit
+eingesetzt.''\cite{SWG17} Cloud Computing ist die Möglichkeit
 Speicher und Rechenpower in Form von Cloud\hyp{}Storage, virtuellen Servern,
 der neuen Container\hyp{}Technologie oder ganzen Rechenzentren on\hyp{}demand
 virtuell abzurufen, zu verwalten und für die eigene Firma möglichst
@@ -39,7 +39,7 @@ Nachteil der Skalierbarkeit. Als Startup mit beispielsweise gerade mal
 ein Dutzend Mitarbeitern ist es unmöglich weltweit zu skalieren auf
 Basis von Hardware. Der Einkauf und die anschließende Verwaltung von
 Servern, Routern, Storages oder Switches ist nicht nur kostenintensiv,
-sondern vorallem auch zeit\hyp{} und Mitarbeiterintensiv.\footcite[S.
+sondern vorallem auch zeit\hyp{} und Mitarbeiterintensiv.\cite[S.
 1]{RZ17} Besonders wenn man weltweit expandieren möchte ist es enorm
 schwerig für Newcomer genug Infrastruktur aufzubauen um alle Kunden
 zufriedenstellend zu versorgen.  So kann zum Beispiel eine Verbindung
@@ -71,8 +71,8 @@ Nachteile sowie Unterschiede zwischen beiden Konzepten hervorgehoben.
 \addcontentsline{toc}{section}{Einführung in Amazon EC2}
 Amazon EC2, ausgeschrieben Amazon Elastic Compute Cloud, ist im Jahr
 2006 als Bestandteil von Amazon Web Services (AWS)
-entstanden.\footcite{aws} Amazon Web Services gehört dem gleichnamigen
-Tochterunternehmen des Online\hyp{}Versandhändlers Amazon.com.\footcite{Fou}
+entstanden.\cite{aws} Amazon Web Services gehört dem gleichnamigen
+Tochterunternehmen des Online\hyp{}Versandhändlers Amazon.com.\cite{Fou}
 Das Tochterunternehmen deckt verschiedene Sparten des Cloud\hyp{}Computing
 ab. Darunter fallen diverse Bereiche wie Rechenpower in Form von
 virtuellen Servern und Containern, Speicher in Form des Amazon Web
@@ -88,7 +88,7 @@ Hauptmerkmale von Amazon Elastic Compute Cloud sind:
     \item Webservice mit API
     \item Instanzen sind On\hyp{}Demand verfügbar innerhalb von Minuten anstatt
       Stunden oder Tagen
-    \item Service Level Agreement garantiert 99,95\% uptime\footcite{ec2}
+    \item Service Level Agreement garantiert 99,95\% uptime\cite{ec2}
     \item Rechenzentren in verschiedenen Regionen der Welt
     \item Integration in andere Amazon Web Services: Zum Beispiel S3
     \item Kostengünstig: Es wird nur für genutzte Rechenkapazität bezahlt
@@ -96,7 +96,7 @@ Hauptmerkmale von Amazon Elastic Compute Cloud sind:
 Wenn man von Amazon EC2 spricht, spricht man fast immer von virtuellen
 Maschinen in der Amazon Web Services Cloud. Als Grundlage für diese
 virtuellen Maschinen oder auch Instanzen (englisch Instance) dienen
-Amazon Machine Images (AMI).\footcite{ec2details} Amazon Machine Images
+Amazon Machine Images (AMI).\cite{ec2details} Amazon Machine Images
 können verschiedene Betriebssysteme beinhalten. Angefangen bei Microsoft
 Windows über diverse Linux Derivate wie Red Hat Linux (RHEL), Debian
 oder CentOS. Anhand von diesen AMIs lassen sich dann wiederum Instanzen
@@ -112,7 +112,7 @@ Konfigurationen ab. Angefangen beim kleinsten Instanztyp dem T2.nano mit
 einem virtuellen CPU\hyp{}Kern und 0.5GiB Arbeitsspeicher bis hin zum
 größten Instanztyp wie dem m4.16xlarge mit 64 virtuellen
 CPU\hyp{}Kernen, 256GiB Arbeitsspeicher und einer dedizierten
-EBS\hyp{}Bandbreite von 10.000 Mbit/s.  \footcite{instance} EBS steht
+EBS\hyp{}Bandbreite von 10.000 Mbit/s.  \cite{instance} EBS steht
 für Elastic Block Store und ist eine dedizierte Speichereinheit in der
 Amazon Web Services Cloud. Elastic Block Store kann auf jede beliebige
 Größe angepasst werden und ist unabhängig von der Elastic Compute Cloud.
@@ -123,7 +123,7 @@ Probleme innerhalb von Minuten von einer Instanz auf eine andere
 umzuziehen.
 \begin{table}[h]
     \centering
-    \caption{Beispiel für die Varianz der Instanzen anhand vom Typ T2\footcite{instance}}
+    \caption{Beispiel für die Varianz der Instanzen anhand vom Typ T2\cite{instance}}
     \label{tab:1}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
@@ -189,7 +189,7 @@ Diese Länder sind eingeteilt in folgende geographische Regionen:
 \end{itemize}
 Damit sind bis auf den Kontinent Afrika, alle besiedelten Kontinente
 abgedeckt. Diese geographischen Regionen sind dann nochmal in Regionen
-unterteilt. Für Nordamerika wären das beispielsweise\footcite{region}:
+unterteilt. Für Nordamerika wären das beispielsweise\cite{region}:
 \begin{itemize}
     \item USA Ost (Nord\hyp{}Virginia)
     \item USA Ost (Ohio)
@@ -200,7 +200,7 @@ unterteilt. Für Nordamerika wären das beispielsweise\footcite{region}:
 \end{itemize}
 AWS GovCloud ist eine Sonder\hyp{}Region und isoliert von allen anderen
 Regionen. Der Grund dafür ist, dass AWS GovCloud Applikationen und
-Informationen der US\hyp{}Regierung hosted.\footcite{govcloud} Zusätzlich zu
+Informationen der US\hyp{}Regierung hosted.\cite{govcloud} Zusätzlich zu
 diesen Regionen gibt es noch High\hyp{}Availability\hyp{}Zones
 (Hoch\hyp{}Verfügbarkeits\hyp{}Zonen). Eine Region kann mehrere dieser
 High\hyp{}Availability\hyp{}Zonen haben. Im Endeffekt handelt es sich bei
@@ -209,7 +209,7 @@ einer Region. Die Region USA Ost (Nord Virginia) hat beispielsweise 5
 High\hyp{}Availability\hyp{}Zonen. Durch diese
 High\hyp{}Availability\hyp{}Zonen kann man Applikationen mehrfach in einer
 Region deployen, dadurch erhält man automatische, unterbrechungsfreie Failover
-die zu einer hohen Redundanz führen.\footcite{region} Realisiert wird dies
+die zu einer hohen Redundanz führen.\cite{region} Realisiert wird dies
 durch private Glasfasernetzwerke zwischen den einzelnen
 High\hyp{}Availability\hyp{}Zonen. Dies lässt sich dann weiter hochskalieren
 über ganze Regionen. Außerdem gibt es noch
@@ -241,7 +241,7 @@ Virtualisierung:
 ``Der Hauptunterschied zwischen PV und HVM basierten Amazon Machine
 Images besteht im verwendeten Bootloader und der Verfügbarkeit von
 speziellen Hardware\hyp{}Erweiterungen (CPU, Netzwerk, Speicher) für bessere
-Performance.''\footcite{virtualization} Bei PV basierten Amazon Machine
+Performance.''\cite{virtualization} Bei PV basierten Amazon Machine
 Images wird also keine Hardware\hyp{}Emulation benutzt. Dies bedeutet im
 Umkehrschluss, dass das jeweilige Betriebssystem in der virtuellen Maschine nur
 software\hyp{}seitig emuliert wird. Dadurch hat die VM dann auch keinen
@@ -253,7 +253,7 @@ bei älterer oder sehr billiger Hardware der Fall). Hinzukommend nutzen
 PV basierte AMIs einen speziellen Bootloader (eine gepatchte Version des
 bekannten Linux Bootloaders GRUB), welcher den Boot\hyp{}Zyklus in
 Gang setzt und danach den richtigen Kernel
-lädt.\footcite{virtualization} Bei HVM basierten Amazon Machine Images
+lädt.\cite{virtualization} Bei HVM basierten Amazon Machine Images
 hingegen virtualisiert die Hardware die Gast\hyp{}Systeme (dies geschieht
 beispielsweise durch die Intel Virtualization Technology (Intel VT\hyp{}x)).
 Dies hat nicht nur eine bessere Performance der virtualisierten
@@ -290,10 +290,10 @@ Bei Namespaces handelt es sich um eine Prozess\hyp{}Virtualisierung.
 Statt einem festen Hypervisor wie beispielsweise KVM oder Xen wird dafür
 der system call ``setns()'' des Linux\hyp{}Kernels benutzt. Der
 ``setns()''\hyp{}syscall existiert im Linux\hyp{}Kernel seit Version
-3.0.\footcite{setns} Die Prozess\hyp{}Virtualisierung ist nichts anderes als
+3.0.\cite{setns} Die Prozess\hyp{}Virtualisierung ist nichts anderes als
 eine Prozess\hyp{}Isolation. Ein Prozess hat also nur eine eingeschränkte
 Sichtweite und kann nur innerhalb seines zugewiesenen Namespaces
-agieren. Docker benutzt die folgenden 5 Namespaces:\footcite{docker}
+agieren. Docker benutzt die folgenden 5 Namespaces:\cite{docker}
 \begin{itemize}
     \item The ipc namespace
     \item The net namespace
@@ -305,7 +305,7 @@ Der \textbf{ipc} Namespace regelt den Zugriff auf Ressourcen für
 Interprozesskommunikation. Da der Linux\hyp{}Kernel immer noch keine
 Interprozesskommunikation auf Kernel\hyp{}Ebene besitzt werden die
 üblichen Ressourcen dafür benutzt. Also Sockets, Shared Memory und
-Pipes.\footcite{ipc} Der \textbf{net} Namespace managed den Zugriff auf
+Pipes.\cite{ipc} Der \textbf{net} Namespace managed den Zugriff auf
 Netzwerk\hyp{}Ressourcen wie beispielsweise Ethernet\hyp{} oder
 WLAN\hyp{}Interfaces. Der \textbf{pid} Namespace ist wiederum für die
 Prozess\hyp{}Isolation zuständig. Dazu wird praktisch innerhalb eines
@@ -321,12 +321,12 @@ Unix\hyp{}Zeit ist enorm wichtig für ordentliche Kryptographie und
 verteilte Anwendungen. Ein weiteres wichtiges Kernel\hyp{}Feature für
 Container unter Linux sind Control Groups. Control Groups oder auch
 \textbf{cgroups} isolieren Ressourcen für eine Gruppe von
-Prozessen.\footcite{cgroups} \textbf{cgroups} können dafür auf
+Prozessen.\cite{cgroups} \textbf{cgroups} können dafür auf
 Namespaces zur Isolation zurück greifen. Außerdem sind Union file
 systems essentiell für Docker\hyp{}basierte Systeme. Union file systems
 ist ein Sammelbegriff für Filesysteme die das Filesystem in Schichten
 unterteilen. Darunter fallen zum Beispiel btrfs, AUFS, vfs oder
-DeviceMapper.\footcite{docker}
+DeviceMapper.\cite{docker}
 Dadurch, dass bei Containern keine Virtualisierung stattfindet sondern
 nur eine Prozess\hyp{}Isolierung wird beim Einsatz von Containern viel
 weniger Ressourcen benutzt als bei gängigen Virtualisierungstechniken.
@@ -345,7 +345,7 @@ Entwicklern einfacher importieren. So erspart man sich das Aufsetzen
 einer Entwicklungsumgebung mit allen Eigenheiten der zu entwickelnden
 Applikation. Amazon EC2 Container verfeinert diese Vorzüge von
 Containern sogar noch. Einige der Vorzüge von EC2 Container
-sind:\footcite{container}
+sind:\cite{container}
 \begin{itemize}
     \item Einfaches Cluster Management
     \item Hohe Performance
@@ -363,7 +363,7 @@ legen, wenn die Firma wüsste, dass die Cloud anfällig gegen Hacker ist.
 Amazon Web Services versucht es Hackern so schwierig wie möglich zu
 machen. So bietet Amazon Web Services reichlich Informationsmaterial zu
 dem Thema, bietet die Möglichkeit von
-Penetrationstests\footcite{penetration}, eine Kontaktadresse um
+Penetrationstests\cite{penetration}, eine Kontaktadresse um
 Schwachstellen zu melden und diverse Sicherheits\hyp{}Features. Alles
 Dinge die heutzutage nicht ganz selbstverständlich sind aber
 selbstverständlich sein sollten.  Amazon Machine Images werden
@@ -384,19 +384,19 @@ Amazon dazu in der Lage wäre den im Browser generierten privaten
 Schlüssel abzufangen.  Desweiteren bietet Amazon Web Services die
 Möglichkeit \textbf{s3}\hyp{}Instanzen zu verschlüsseln. Dies kann
 server\hyp{}seitig von Amazon aus passieren oder client\hyp{}seitig vom
-jeweiligen Benutzer des Dienstes.\footcite{encryption} Letzteres ist mit
+jeweiligen Benutzer des Dienstes.\cite{encryption} Letzteres ist mit
 einem erhöhten Aufwand verbunden. Desweiteren unterstützt Amazon Web
 Services für viele seiner Dienste
 Multi\hyp{}Faktor\hyp{}Authentifizierung (MFA). Zur Wahl stehen
 SMS\hyp{}basierte Lösungen oder Security\hyp{}Tokens. Für
 Security\hyp{}Tokens benötigt man ein MFA\hyp{}Gerät, dies kann zum
 Beispiel ein Smartphone sein oder auch virtualisiert
-werden.\footcite{mfa}Zwei weitere Schlüssel\hyp{}Konzepte für Sicherheit
+werden.\cite{mfa}Zwei weitere Schlüssel\hyp{}Konzepte für Sicherheit
 in der AWS Cloud sind: Amazon Identity and Access Management (IAM) und
 Amazon Security Groups. Bei Amazon Identity and Access Management
 handelt es sich um eine zentrale Verwaltung um den Zugang auf einzelne
 Instanzen oder Amazon Produkte via Benutzer\hyp{} oder
-Gruppenrichtlinien zu verwalten.\footcite{iam} Die Verwaltung läuft
+Gruppenrichtlinien zu verwalten.\cite{iam} Die Verwaltung läuft
 dabei via Weboberfläche oder in der Shell mit dem AWS\hyp{}Client.
 Für Netzwerksicherheit setzt Amazon Web Services auf Security Groups.
 Diese Security Groups haben gegenüber einer traditionellen Firewall
@@ -495,7 +495,7 @@ relativ schnell explodieren wenn man nicht aufpasst, da man für
 Rechenzeit, Speicher und Traffic bezahlt. Dies macht es um einiges
 schwieriger die Kosten zu überblicken und auf längere Sicht zu planen.
 Auch wenn Amazon Tools zur Berechnung der Kosten
-anbietet.\footcite{calculator} Außerdem sollte nicht die Tatsache
+anbietet.\cite{calculator} Außerdem sollte nicht die Tatsache
 unterschätzt werden, dass es sich bei Amazon um ein US\hyp{}Unternehmen
 handelt. Damit liegt das Unternehmen im Einzugsbereich der
 US\hyp{}Geheimdienste. Es ist daher fraglich ob man deutsche Kundendaten
