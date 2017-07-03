@@ -489,7 +489,20 @@ regionalen Anbieter zu mieten. Meistens sind diese regionalen Anbieter
 jedoch von der Größe her nicht in der Lage größere Firmen zu betreuen
 und es gestaltet sich als schwierig auf schnelle Veränderungen in der
 Nutzerbasis zu reagieren. Durch starre Miet\hyp{} und Supportverträge
-wird dieser Faktor noch verstärkt.
+wird dieser Faktor noch verstärkt. Trotz alledem hat Amazon EC2 auch
+Schattenseiten. Die Kosten für das Betreiben der EC2 Instanzen können
+relativ schnell explodieren wenn man nicht aufpasst, da man für
+Rechenzeit, Speicher und Traffic bezahlt. Dies macht es um einiges
+schwieriger die Kosten zu überblicken und auf längere Sicht zu planen.
+Auch wenn Amazon Tools zur Berechnung der Kosten
+anbietet.\footcite{calculator} Außerdem sollte nicht die Tatsache
+unterschätzt werden, dass es sich bei Amazon um ein US\hyp{}Unternehmen
+handelt. Damit liegt das Unternehmen im Einzugsbereich der
+US\hyp{}Geheimdienste. Es ist daher fraglich ob man deutsche Kundendaten
+oder Firmengeheimnisse in solch einer Cloud ablegen sollte, auch wenn
+Amazon \textbf{s3} Storage Client\hyp{}seitige Verschlüsselung
+unterstützt. Dieses Risiko muss allerdings jede Firma für sich selbst
+abschätzen.
 \addcontentsline{toc}{chapter}{Fazit}
 \nocite{*}
 \printbibliography
