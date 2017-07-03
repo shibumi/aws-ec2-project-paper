@@ -365,27 +365,26 @@ legen, wenn die Firma wüsste, dass die Cloud anfällig gegen Hacker ist.
 Amazon Web Services versucht es Hackern so schwierig wie möglich zu
 machen. So bietet Amazon Web Services reichlich Informationsmaterial zu
 dem Thema, bietet die Möglichkeit von
-Penetrationstests\footcite{penetration}, eine
-Kontaktadresse um Schwachstellen zu melden und diverse
-Sicherheits\hyp{}Features. Alles Dinge die heutzutage nicht ganz
-selbstverständlich sind aber selbstverständlich sein sollten.
-Amazon Machine Images werden beispielsweise wenn diese via SSH
-(SecureShell) gewartet werden stehts mit SSH\hyp{}Keys statt
-Plaintext\hyp{}Passwörtern abgesichert. SSH\hyp{}Keys sind
-Plaintext\hyp{}Passwörtern in vieler Hinsicht überlegen. Erstens neigt
-man nicht dazu einfache Passwörter zu gestalten und zweitens hat man bei
-SSH\hyp{}Keys mehr Komponenten. Ein SSH\hyp{}Key besteht immer aus zwei
-Teilen. Einem privaten und einem öffentlichen Schlüssel. Der private
-Schlüssel ist meistens noch mit einem Kennwort abgesichert als
-zusätzliche Hürde für den Angreifer. Der öffentliche Schlüssel wird auf
-einem virtuellen Server oder Container abgelegt, der private Schlüssel
-ist im Besitz des Administrators. Amazon Web Services bietet diese
-Möglichkeit solche SSH\hyp{}Keys im Browser zu generieren oder man
-verwendet eigene Keys. Letzteres stellt sicher, dass selbst Amazon nicht
-im Besitz des privaten Schlüssels ist, selbst wenn Amazon dazu in der
-Lage wäre den im Browser generierten privaten Schlüssel abzufangen.
-Desweiteren bietet Amazon Web Services die Möglichkeit
-\textbf{s3}\hyp{}Instanzen zu verschlüsseln. Dies kann
+Penetrationstests\footcite{penetration}, eine Kontaktadresse um
+Schwachstellen zu melden und diverse Sicherheits\hyp{}Features. Alles
+Dinge die heutzutage nicht ganz selbstverständlich sind aber
+selbstverständlich sein sollten.  Amazon Machine Images werden
+beispielsweise wenn diese via SSH (SecureShell) gewartet werden stehts
+mit SSH\hyp{}Keys statt Plaintext\hyp{}Passwörtern abgesichert.
+SSH\hyp{}Keys sind Plaintext\hyp{}Passwörtern in vieler Hinsicht
+überlegen. Erstens neigt man nicht dazu einfache Passwörter zu gestalten
+und zweitens hat man bei SSH\hyp{}Keys mehr Komponenten. Ein
+SSH\hyp{}Key besteht immer aus zwei Teilen. Einem privaten und einem
+öffentlichen Schlüssel. Der private Schlüssel ist meistens noch mit
+einem Kennwort abgesichert als zusätzliche Hürde für den Angreifer. Der
+öffentliche Schlüssel wird auf einem virtuellen Server oder Container
+abgelegt, der private Schlüssel ist im Besitz des Administrators. Amazon
+Web Services bietet diese Möglichkeit solche SSH\hyp{}Keys im Browser zu
+generieren oder man verwendet eigene Keys. Letzteres stellt sicher, dass
+selbst Amazon nicht im Besitz des privaten Schlüssels ist, selbst wenn
+Amazon dazu in der Lage wäre den im Browser generierten privaten
+Schlüssel abzufangen.  Desweiteren bietet Amazon Web Services die
+Möglichkeit \textbf{s3}\hyp{}Instanzen zu verschlüsseln. Dies kann
 server\hyp{}seitig von Amazon aus passieren oder client\hyp{}seitig vom
 jeweiligen Benutzer des Dienstes.\footcite{encryption} Letzteres ist mit
 einem erhöhten Aufwand verbunden. Desweiteren unterstützt Amazon Web
@@ -399,8 +398,36 @@ in der AWS Cloud sind: Amazon Identity and Access Management (IAM) und
 Amazon Security Groups. Bei Amazon Identity and Access Management
 handelt es sich um eine zentrale Verwaltung um den Zugang auf einzelne
 Instanzen oder Amazon Produkte via Benutzer\hyp{} oder
-Gruppenrichtlinien zu verwalten.\footcite{iam} Die Verwaltung läuft via Weboberfläche
-oder in der Shell mit dem AWS\hyp{}Client.
+Gruppenrichtlinien zu verwalten.\footcite{iam} Die Verwaltung läuft
+dabei via Weboberfläche oder in der Shell mit dem AWS\hyp{}Client.
+Für Netzwerksicherheit setzt Amazon Web Services auf Security Groups.
+Diese Security Groups haben gegenüber einer traditionellen Firewall
+einige Vorteile. Normalerweise legt man nämlich eine Firewall über ein
+komplettes Subnetz und riegelt damit das betreffende Subnetz von außen
+ab. Durch diese Maßnahme steigen jedoch die Anzahl der
+Firewall\hyp{}Regeln und dessen Komplexität. Dies macht nicht nur
+Debugging kompliziert sondern auch das erstellen von neuen Regeln, da
+Regeln immer global gelten für das komplette Subnetz. Amazon Web
+Services Lösung sind Security Groups. Anhand von Security Groups kann
+man Firewall\hyp{}Regeln einer Gruppe von Instanzen mit den gleichen
+Aufgaben zuweisen. Diese vergebenen Regeln betrffen dann jeweils nur
+diese Instanz und gelten nicht global für alle Instanzen. Außerdem gilt
+bei Amazon Security Groups, dass ausgehender Traffic immer erlaubt ist
+und einkommender Traffic präventiv geblockt wird. Dieser Mechanismus
+gewährleistet maximale Sicherheit mit möglichst geringer Komplexität da
+weniger Regeln gebraucht werden. Die unten abgebildeten Grafiken
+verdeutlichen dieses Prinzip nochmal.
+\begin{figure}[h]
+      \centering
+      \includegraphics[width=0.8\textwidth]{figures/traditional_firewall.pdf}
+      \caption{Traditionelle Firewall}\label{fig:6}
+\end{figure}
+\begin{figure}[h]
+      \centering
+      \includegraphics[width=0.8\textwidth]{figures/aws_firewall.pdf}
+      \caption{Firewall mit Amazon Security Groups}\label{fig:7}
+\end{figure}
+
 \chapter*{Fazit}
 \addcontentsline{toc}{chapter}{Fazit}
 \nocite{*}
