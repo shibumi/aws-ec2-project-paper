@@ -426,7 +426,70 @@ verdeutlichen dieses Prinzip nochmal.
       \caption{Firewall mit Amazon Security Groups}\label{fig:7}
 \end{figure}
 \chapter*{Fazit}
-
+Amazon Web Services vereint eine große Palette von Produkten mit einer
+weltweiten Infrastruktur. Dadurch lassen sich Applikationen ohne
+Probleme weltweit redundant verteilen um eine beinahe perfekte Abdeckung
+zu erhalten. Moderne Sicherheitstechnologien wie
+Multi\hyp{}Faktor\hyp{}Authentifizierung, Amazon Security Groups und das
+Amazon Identiy and Access Management bieten Sicherheit auf hohem Niveau.
+Durch die breite Auswahl von Instanzen und Technologien deckt Amazon Web
+Services eine breite Kundschaft ab. So sind die einfachen kleineren
+Instanzen für Privatkunden interessant, während die mittleren Instanzen
+eher für Kleine\hyp{} und Mittelständische Unternehmen gedacht sind. Die
+größeren Instanzen eignen sich gut für sehr komplexe Applikationen die
+viele Ressourcen benötigen. Die Einteilung in verschiedene Regionen auf
+der Welt erweitert nicht nur Amazons Markt sondern unterstützt auch die
+Unternehmen, welche sich auf Amazon Web Services verlassen, in ihrem
+Bestreben nach immer kleineren Latenzen zum Kunden und damit einer
+höheren Kundenzufriedenheit. Außerdem wird durch die zusätzlichen
+Regionen eine Ausfallsicherheit hergestellt. Selbst wenn in einem
+Rechenzentrum ein Feuer ausbrechen würde wären in der Region eine
+handvoll weitere Rechenzentren die den Schaden beim Kunden ausgleichen
+würden. Dies wird ermöglicht durch den Kern von Amazon Web Services
+Produktpalette: Amazon EC2. Dadurch, dass es sich bei den Instanzen um
+Container oder virtuelle Server handelt lassen sich diese relativ
+einfach zwischen verschiedenen Rechenzentren oder Regionen verschieben.
+Hinzukommend bezahlt der Kunde nur für wirklich eingesetzte Rechenzeit.
+Dadurch lassen sich Kosten erheblich senken und es wird ein
+Alleinstellungsmerkmal gegenüber andere Cloud\hyp{}Hoster geschaffen,
+welche nahezu alle auf monatliche Abonnements von virtuellen Servern und
+Containern setzen. Letzteres macht teilweise mehr Sinn für
+beispielsweise feste Firmenauftritte in Form von Webseiten. Desweiteren
+sind die Kosten auf diese Weise transparenter. Man hat feste Kosten mit
+denen man jeden Monat rechnen kann. Wo es bei anderen Hostern allerdings
+mangelt ist eine reiche Auswahl an Regionen. Viele Hoster wie
+beispielsweise der französische Hoster OVH bieten nur in einer Handvoll Ländern Rechenzentren an
+und meistens ist dies dann auch nur das einzige Rechenzentrum in dem
+Land. Gerade für Startups können monatliche Abonnements übrigens fatal
+sein. Startups haben zu kämpfen mit starken Fluktationen ihrer
+Nutzerbasis. So können besonders bei Smartphone Apps mit einem Server
+Backend über Nacht mehrere Tausende Nutzer hinzukommen (aber auch
+genauso schnell wieder verschwinden). Bei so einem Geschäft auf
+monatliche Abonnements zu setzen wäre fatal. Wenn die Nutzerzahlen
+nämlich einbrechen wäre man mit hohen Kosten konfrontiert. Deshalb
+eignen sich gerade für solche Geschäftsmodelle Amazon EC2 Instanzen.
+Durch Amazon EC2 Instanzen kann das jeweilige Startup innerhalb von
+Minuten neue Instanzen booten und mit Amazon EC2 Loadbalancern den
+Traffic auf die unterschiedlichen Instanzen verteilen. Dies weltweit und
+rund um die Uhr. Die Amazon EC2 Weboberfläche gestaltet außerdem die
+Administration der Instanzen äußerst einfach. Statt mehreren
+Cloud\hyp{}Ingenieuren die einen Openstack\hyp{}Cluster in der eigenen
+Firma auf echter Hardware betreuen braucht es bei Amazon EC2 nur einen
+Bruchteil der Arbeitskräfte. Dadurch werden nicht nur Personalkosten
+gespart (die meistens die größten Kosten im Unternehmen darstellen)
+sondern es wird auch die Anschaffung eigener Hardware erspart. Hardware
+ist nämlich weit aus schwieriger skalierbar als virtuelle Instanzen.
+Wenn sich Firmen dazu entschließen Hardware anzuschaffen ist dies
+gekoppelt weiteren Anschaffungen. Man benötigt ein stabiles Stromnetz,
+Unterbrechungsfreie Stromversorgungen, einen vernünftigen
+Breitbandanschluss, die passenden Räumlichkeiten mit ausreichender
+Klimatisierung und Brandschutzbestimmungen. Es kommt also einiges an
+Ausgaben zusammen. Eine Alternative wäre die Hardware bei einem
+regionalen Anbieter zu mieten. Meistens sind diese regionalen Anbieter
+jedoch von der Größe her nicht in der Lage größere Firmen zu betreuen
+und es gestaltet sich als schwierig auf schnelle Veränderungen in der
+Nutzerbasis zu reagieren. Durch starre Miet\hyp{} und Supportverträge
+wird dieser Faktor noch verstärkt.
 \addcontentsline{toc}{chapter}{Fazit}
 \nocite{*}
 \printbibliography
