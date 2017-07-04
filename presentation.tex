@@ -89,13 +89,14 @@
                 \item steht für paravirtual
                 \item hat einen speziellen Bootloader
                 \item Virtualisierung nur durch Software
-                \item \implies Kein Zugriff auf Hardware-Schnittstelle
+                \item \implies Kein Zugriff auf Hardware-Schnittstellen
             \end{itemize}
         \item HVM
             \begin{itemize}
                 \item steht für hardware virtual machine
                 \item performanter
                 \item echte virtualisierung auf Hardware-Ebene
+                \item \implies Zugriff auf Hardware-Schnittstellen
             \end{itemize}
     \end{itemize}
 \end{frame}
@@ -107,9 +108,82 @@
 
 \section{EC2 Container}
 \begin{frame}
-    \frametitle{}
+    \frametitle{Was sind Container?}
+    \begin{itemize}
+        \item keine Virtualisierung
+        \item Isolation
+        \item Betriebssystem-Kernel Support benötigt
+        \item Isolation von Applikationen oder ganzen Betriebssystemen
+        \item Bekannte Technologien: Docker, LXC, systemd-nspawn
+    \end{itemize}
 \end{frame}
+
+\begin{frame}
+    \frametitle{Wie funktionieren Container}
+    \begin{itemize}
+        \item namespace 
+        \item cgroups 
+        \item Union File Systems
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Namespace}
+    \begin{itemize}
+        \item Prozess-Virtualisierung
+        \item setns-syscall im Kernel
+        \item Verfügbare Namespaces:
+            \begin{itemize}
+                \item ipc (Interprozesskommunikation)
+                \item net (Netzwerk)
+                \item pid (Prozess-Virtualisierung)
+                \item mnt (Mount-Points/Andockstellen im Filesystem)
+                \item uts (Unix-Time-Sharing)
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Cgroups}
+    \begin{itemize}
+        \item Control Groups
+        \item isolieren System-Ressourcen
+        \item Gruppiert virtuelle Prozesse
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Union File Systems}
+    \begin{itemize}
+        \item Abstraktionsschicht im Filesystem
+        \item Features wie CoW (Copy-on-Write)
+        \item Bekannte Filesysteme: AUFS, btrfs, UnionFS, zfs, xfs
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Amazon EC2 Container}
+    \begin{itemize}
+        \item Container basierter Cluster 
+        \item Als Basis Docker
+        \item Effizienter Einsatz von Ressourcen
+        \item Webinterface
+        \item Integration in andere AWS Dienste
+        \item Sehr skalierbar
+    \end{itemize}
+\end{frame}
+
 \section{Sicherheit}
+\begin{frame}
+    \frametitle{Sicherheit in Amazon EC2}
+    \begin{itemize}
+        \item Multi-Faktor-Authentifizierung
+        \item Amazon Identity and Access Management (IAM)
+        \item Security Groups
+    \end{itemize}
+
+\end{frame}
+
 
 
 \end{document}
