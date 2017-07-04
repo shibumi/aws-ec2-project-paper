@@ -56,12 +56,59 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{}
+    \frametitle{Die EC2 Landschaft}
+    \includegraphics[width=1.0\textwidth]{figures/EC2-Landscape.pdf}
 \end{frame}
 
 \section{Regionen}
+\begin{frame}
+    \frametitle{}
+\end{frame}
+
 \section{Virtualisierungstechnik}
+\begin{frame}
+    \frametitleci{Was ist Virtualisierung?}
+    \begin{itemize}
+        \item Nachbildung von Hardware oder Software-Schnittstellen
+        \item Abstraktionsschicht
+        \item Ausführen eines Betriebssystems in einem anderen
+        \item Aufteilung von System-Ressourcen
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Visualisierung der Hypervisor Technologie}
+    \includegraphics[width=1.0\textwidth]{figures/hypervisor.pdf}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Amazons Virtualisierungstechnologien}
+    \begin{itemize}
+        \item PV
+            \begin{itemize}
+                \item steht für paravirtual
+                \item hat einen speziellen Bootloader
+                \item Virtualisierung nur durch Software
+                \item \implies Kein Zugriff auf Hardware-Schnittstelle
+            \end{itemize}
+        \item HVM
+            \begin{itemize}
+                \item steht für hardware virtual machine
+                \item performanter
+                \item echte virtualisierung auf Hardware-Ebene
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{PV und HVM im Vergleich}
+    \includegraphics[width=1.0\textwidth]{figures/hvm_pv.pdf}
+\end{frame}
+
 \section{EC2 Container}
+\begin{frame}
+    \frametitle{}
+\end{frame}
 \section{Sicherheit}
 
 
